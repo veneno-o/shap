@@ -1,25 +1,10 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {  useState } from 'react'
 import './App.css'
-import { instace } from './https/axios'
 import toast from 'react-hot-toast'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  useEffect(()=>{
-    
-    // 批量请求
-    const requests = Array.from({ length: 5 }, (_, i) => instace.get(`http://localhost:5173/data/${i+1}`));
-    Promise.all(requests)
-      .then(responses => {
-        console.log('All data fetched', responses);
-      })
-      .catch(errors => {
-        console.error('Some requests failed', errors);
-      });
-  },[])
 
   return (
     <>
