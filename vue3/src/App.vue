@@ -4,20 +4,16 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
+    - 介绍项目
+    项目-角色-功能-亮点
+    - 防抖和节流的区别，按钮点击/连续输入，窗口调整/滚动条变化 resize mousemove 事件触发  ok
+    - 框架源码《不要太空，讲具体的》，想到了什么
+    - const let var<成体系的表达> ok
+    - 浏览器输入url会发生什么 ok
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    反思：感觉像背书，没有总结跟思考
+  </div>
 </template>
 
 <style scoped>
