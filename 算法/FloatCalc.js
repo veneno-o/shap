@@ -4,18 +4,31 @@
 // 背景：JavaScript 中的浮点数运算结果并不准确
 
 class FloatCalc{
-    big = 100
+    max_multiple = 1
     add(a,b){
-        return(a*this.big+b*this.big)/this.big
+        this.maxMultiple(a,b)
+        return(a*this.max_multiple+b*this.max_multiple)/this.max_multiple
     }
     subtract(a,b){
-        return(a*this.big-b*this.big)/this.big
+        this.maxMultiple(a,b)
+        return(a*this.max_multiple-b*this.max_multiple)/this.max_multiple
     }
     multiply(a,b){
-        return(a*this.big*b*this.big)/this.big/this.big
+        this.maxMultiple(a,b)
+        return(a*this.max_multiple*b*this.max_multiple)/this.max_multiple/this.max_multiple
     }
     divide(a,b){
-        return((a*this.big)/(b*this.big))
+        this.maxMultiple(a,b)
+        return((a*this.max_multiple)/(b*this.max_multiple))
+    }
+    maxMultiple(a,b){
+        this.max_multiple = 1;
+        const [str_a,str_b] = [String(a),String(b)]
+        const len_a = str_a.split(".")[1].length
+        const len_b = str_b.split(".")[1].length
+        
+        let max = Math.max(len_a,len_b)
+        this.max_multiple=Math.pow(10,max)
     }
 }
 
@@ -35,4 +48,3 @@ console.log(my_number.subtract(0.3, 0.1)); // 0.2
 console.log(my_number.multiply(0.1, 0.2)); // 0.02
 console.log(my_number.divide(0.3, 0.1)); // 3
 
-console.log(Number(BigInt(1)+BigInt(2)));
